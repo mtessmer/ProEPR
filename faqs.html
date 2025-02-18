@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Frequently Asked Questions &mdash; chiLife  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
 
@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Arbitrary molecular labels" href="gallery/11-Arbitrary_molecular_labels.html" /> 
+    <link rel="prev" title="OpenMM Score Function for Amino Acid Repacking" href="gallery/13-OpenMM_Score_Function.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -106,7 +106,7 @@ that are unique to those kinds of labels.</p>
 <h2>How do I use my own PDB file?<a class="headerlink" href="#how-do-i-use-my-own-pdb-file" title="Link to this heading"></a></h2>
 <p>chiLife uses <a class="reference external" href="https://www.mdanalysis.org/">MDAnalysis</a> as a back end for protein structure and will accept <code class="xref py py-class docutils literal notranslate"><span class="pre">MDAnalysis.Universe</span></code> and
 <code class="xref py py-class docutils literal notranslate"><span class="pre">MDAnalysis.AtomGroup</span></code> objects as proteins, thus a protein can be loaded in using MDAnalysis:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">MDAnalysis</span> <span class="k">as</span> <span class="nn">mda</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">MDAnalysis</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mda</span>
 <span class="n">my_protein</span> <span class="o">=</span> <span class="n">mda</span><span class="o">.</span><span class="n">Universe</span><span class="p">(</span><span class="s1">&#39;Path/to/my/protein.pdb&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -231,7 +231,7 @@ alignment with python before spin labeling. Examples of aligning sturcures with 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="gallery/11-Arbitrary_molecular_labels.html" class="btn btn-neutral float-left" title="Arbitrary molecular labels" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gallery/13-OpenMM_Score_Function.html" class="btn btn-neutral float-left" title="OpenMM Score Function for Amino Acid Repacking" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

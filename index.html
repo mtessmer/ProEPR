@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>chiLife (χLife) &mdash; chiLife  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
 
@@ -96,15 +96,17 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>2024.12.26 : Changes to the “energy funciton” backend. forcefield, forgive factors, etc should all be parts of the energy function now, and not parts of a rotamer library  Checkout <a class="reference external" href="https://stolllab.github.io/chiLife/gallery/07-Custom_Energy_Function.html">Example_07</a></p></td>
+<tr class="row-even"><td><p>2025.02.17 : Check out our new examples for trajectory analysis <a class="reference external" href="https://stolllab.github.io/chiLife/gallery/12-Analyzing_MD_Simulations.html">Example_12</a> and using OpenMM for repacking <a class="reference external" href="https://stolllab.github.io/chiLife/gallery/07-Custom_Energy_Function.html">Example_13</a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p>2024.08.15 : chiLife 1.0 released!</p></td>
+<tr class="row-odd"><td><p>2024.12.26 : Changes to the “energy funciton” backend. forcefield, forgive factors, etc should all be parts of the energy function now, and not parts of a rotamer library  Checkout <a class="reference external" href="https://stolllab.github.io/chiLife/gallery/13-OpenMM_Score_Function.html">Example_07</a></p></td>
 </tr>
-<tr class="row-even"><td><p>2024.08.15 : chiLife can now be used to create arbitrary peptides with natural and NCAAs. Checkout the <code class="docutils literal notranslate"><span class="pre">make_peptide</span></code> function.</p></td>
+<tr class="row-even"><td><p>2024.08.15 : chiLife 1.0 released!</p></td>
 </tr>
-<tr class="row-odd"><td><p>2024.08.15 : chiLife can make NCAA structures from smiles. Checkout <code class="docutils literal notranslate"><span class="pre">smiles2residue</span></code>. Note: Requires RDKit to be installed.</p></td>
+<tr class="row-odd"><td><p>2024.08.15 : chiLife can now be used to create arbitrary peptides with natural and NCAAs. Checkout the <code class="docutils literal notranslate"><span class="pre">make_peptide</span></code> function.</p></td>
 </tr>
-<tr class="row-even"><td><p>chiLife now supports arbitrary backbone attachments including DNA and RNA labels and more!</p></td>
+<tr class="row-even"><td><p>2024.08.15 : chiLife can make NCAA structures from smiles. Checkout <code class="docutils literal notranslate"><span class="pre">smiles2residue</span></code>. Note: Requires RDKit to be installed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>chiLife now supports arbitrary backbone attachments including DNA and RNA labels and more!</p></td>
 </tr>
 </tbody>
 </table>
@@ -145,9 +147,9 @@ protein models easily and quickly, allowing for scriptable analysis or on-the-fl
 Attaching a <code class="docutils literal notranslate"><span class="pre">SpinLabel</span></code> to a protein does not alter the protein in any way, allowing the protein model to retain the native amino acid.</p>
 <section id="simple-rotamer-library-based-spinlabel-modeling">
 <h3>Simple rotamer-library based SpinLabel modeling<a class="headerlink" href="#simple-rotamer-library-based-spinlabel-modeling" title="Link to this heading"></a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">chilife</span> <span class="k">as</span> <span class="nn">xl</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">chilife</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xl</span>
 
 <span class="c1"># Download protein structure from PDB</span>
 <span class="n">MBP</span> <span class="o">=</span> <span class="n">xl</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;1omp&#39;</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -188,7 +190,7 @@ structure, you can use the <span class="raw-html-md"><a href="#mutating-protein-
 <p>One of the benefits of chiLife is the variety and customizable nature of spin label modeling methods. This includes
 methods to sample side chain conformations that deviate from canonical dihedral angles and fixed rotamer libraries
 (off-rotamer sampling) and methods to repack a <code class="docutils literal notranslate"><span class="pre">SpinLabel</span></code> and its neighboring amino acids.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">chilife</span> <span class="k">as</span> <span class="nn">xl</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">chilife</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xl</span>
 
 <span class="n">MBP</span> <span class="o">=</span> <span class="n">xl</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;1omp&#39;</span><span class="p">)</span>
 
@@ -230,7 +232,7 @@ sampling of only &amp;chi;:raw-html-md:<cite>&lt;sub&gt;4&lt;/sub&gt; and &amp;c
 <h3>Mutating protein structures<a class="headerlink" href="#mutating-protein-structures" title="Link to this heading"></a></h3>
 <p>Sometimes you don’t want an entire rotamer ensemble, but just a protein structure mutated at a particular site with
 the most probable spin label conformer. This can be done easily with the <code class="docutils literal notranslate"><span class="pre">mutate</span></code> function.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">chilife</span> <span class="k">as</span> <span class="nn">xl</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">chilife</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xl</span>
 
 <span class="n">MBP</span> <span class="o">=</span> <span class="n">xl</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;1omp&#39;</span><span class="p">)</span>
 <span class="n">SL</span> <span class="o">=</span> <span class="n">xl</span><span class="o">.</span><span class="n">SpinLabel</span><span class="p">(</span><span class="s1">&#39;R1M&#39;</span><span class="p">,</span> <span class="mi">238</span><span class="p">,</span> <span class="n">protein</span><span class="o">=</span><span class="n">MBP</span><span class="p">)</span>
@@ -351,6 +353,8 @@ on the rotamer libraries to check if there are any additional citations that sho
 <li class="toctree-l2"><a class="reference internal" href="gallery/09-Bifunctional_Labels.html">Bifunctional Labeling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gallery/10-Nucleic_acid_labels.html">Nucleic acid labels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gallery/11-Arbitrary_molecular_labels.html">Arbitrary molecular labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gallery/12-Analyzing_MD_Simulations.html">Analyzing MD simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gallery/13-OpenMM_Score_Function.html">OpenMM Score Function for Amino Acid Repacking</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="faqs.html">Frequently Asked Questions</a><ul>

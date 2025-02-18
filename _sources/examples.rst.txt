@@ -16,3 +16,5 @@ Examples
     gallery/09-Bifunctional_Labels.nblink
     gallery/10-Nucleic_acid_labels.nblink
     gallery/11-Arbitrary_molecular_labels.nblink
+    gallery/12-Analyzing_MD_Simulations.nblink
+    gallery/13-OpenMM_Score_Function.nblink

@@ -1,0 +1,3 @@
+{   
+"path": "../../../examples/12 - Analyzing MD simulations/12 - Analyzing MD Simulations.ipynb"
+}
